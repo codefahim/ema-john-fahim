@@ -1,9 +1,6 @@
 import React from "react";
-import { provider } from "../MyContext";
-
 
 const Card = (props) => {
-
   const lenght = props.card.length;
 
   const card = props.card;
@@ -28,12 +25,10 @@ const Card = (props) => {
   }
   const finalCost = totalPrice + vat + shipping;
 
-  
   return (
     <div>
       <code>Order Summary</code>
-     
-  
+
       <div style={{ textAlign: "start", borderBottom: "1px solid gray" }}>
         <code
           style={{ display: "block", marginTop: "10px", marginLeft: "5px" }}
