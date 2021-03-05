@@ -5,7 +5,10 @@ const Card = (props) => {
   const lenght = props.card.length;
 
   const card = props.card;
-  const totalPrice = card.reduce((total, product) => total + product.price, 0);
+  const totalPrice = card.reduce(
+    (total, product) => total + product.price * product.quantity,
+    0
+  );
 
   let vat = 0;
   if (totalPrice > 10 && totalPrice < 100) {
@@ -29,7 +32,6 @@ const Card = (props) => {
   return (
     <div>
       <code>Order Summary</code>
-
       <div style={{ textAlign: "start", borderBottom: "1px solid gray" }}>
         <code
           style={{ display: "block", marginTop: "10px", marginLeft: "5px" }}
@@ -68,10 +70,16 @@ const Card = (props) => {
       >
         Total Cost: $<span>{finalCost.toFixed(2)}</span>
       </code>
-
-      <Link to="/Order">
-        <button>Review Order</button>
-      </Link>
+      {props.handleButton && (
+        <Link to="/Manage">
+          <button>Conform Order</button>
+        </Link>
+      )}
+      {props.handleReviewOrder && (
+        <Link to="/Order">
+          <button>Review Order</button>
+        </Link>
+      )}
     </div>
   );
 };

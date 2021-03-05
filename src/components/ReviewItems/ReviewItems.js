@@ -5,7 +5,7 @@ import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
 const ReviewItems = (props) => {
   const items = props.reviewItem;
-  const { name, quantity, img, price } = items;
+  const { name, quantity, img, price, key } = items;
 
   console.log(items);
   return (
@@ -24,7 +24,7 @@ const ReviewItems = (props) => {
           Cost: $ <span style={{ fontWeight: "bold" }}>{price * quantity}</span>
         </p>
 
-        <button>
+        <button onClick={() => props.handleRemoveProduct(key)}>
           <FontAwesomeIcon style={{ marginRight: "5px" }} icon={faTrashAlt} />{" "}
           Remove
         </button>
