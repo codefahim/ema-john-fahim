@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../../images/logo.png";
 import "./header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee, faCartPlus } from "@fortawesome/free-solid-svg-icons";
+import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 
 const Header = (props) => {
   return (
@@ -16,9 +16,12 @@ const Header = (props) => {
             return name;
           }}
         </consumer>
-        <a href="Shop">Shop</a>
-        <a href="Order">Order Review</a>
-        <a href="Manage">Manage Inventory</a>
+
+        <a href="/Shop" style={{ marginLeft: "7%" }}>
+          Shop
+        </a>
+        <a href="/Order">Order Review</a>
+        <a href="/Manage">Manage Inventory</a>
         <input type="text" placeholder="Enter Your Product Name" />
         <span
           style={{

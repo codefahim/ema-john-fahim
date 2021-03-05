@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Card = (props) => {
   const lenght = props.card.length;
@@ -67,6 +68,10 @@ const Card = (props) => {
       >
         Total Cost: $<span>{finalCost.toFixed(2)}</span>
       </code>
+
+      <Link to="/Order">
+        <button>Review Order</button>
+      </Link>
     </div>
   );
 };
